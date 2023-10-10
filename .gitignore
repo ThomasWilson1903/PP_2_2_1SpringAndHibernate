@@ -1,2 +1,5 @@
+.idea
+spring-hibernate.iml
+spring_hibernate.iml
 # Project exclude paths
 /target/
