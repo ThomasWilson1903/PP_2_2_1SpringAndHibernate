@@ -24,7 +24,7 @@ public class UserServiceImp implements UserService {
     public User getUser(String model, int series) {
         return userDao.getUser(model, series);
     }
-
+    //Только для чтения, запрет на выполнение других операций grud кроме read
     @Transactional(readOnly = true)
     @Override
     public List<User> listUsers() {

@@ -23,8 +23,13 @@ import java.util.Properties;
 @ComponentScan(value = "hiber")
 public class AppConfig {
 
-    @Autowired
+
     private Environment env;
+
+    @Autowired
+    public AppConfig(Environment environment){
+        this.env = environment;
+    }
 
     @Bean
     public DataSource getDataSource() {
@@ -33,6 +38,7 @@ public class AppConfig {
         dataSource.setUrl(env.getProperty("db.url"));
         dataSource.setUsername(env.getProperty("db.username"));
         dataSource.setPassword(env.getProperty("db.password"));
+
         return dataSource;
     }
 

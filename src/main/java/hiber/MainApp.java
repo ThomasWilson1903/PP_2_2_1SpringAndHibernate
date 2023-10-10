@@ -14,7 +14,7 @@ public class MainApp {
 
       UserService userService = context.getBean(UserService.class);
       User user1 = new User("User1", "Lastname1", "user1@mail.ru");
-      user1.setEmtCar(new Car("TestModel",2));
+      user1.setEmtCar(new Car("TestModel",1));
       userService.add(user1);
 
 
@@ -27,8 +27,7 @@ public class MainApp {
          System.out.println(user.getEmtCar().toString());
          System.out.println();
       }
-        System.out.println( userService.getUser("TestModel", 2).toString());
-
+        System.out.println(userService.getUser("TestModel", 1).toString());
       context.close();
    }
 }
